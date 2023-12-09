@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENCOCAL</title>
+
+    <script>
+        // Función para detectar el sistema operativo
+        function detectarSistemaOperativo() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+        }
+
+        // Función para cargar el contenido según el sistema operativo
+        function cargarContenido() {
+            const sistemaOperativo = detectarSistemaOperativo();
+            const contenido = document.getElementById('contenido');
+
+            if (sistemaOperativo === "Android") {
+                // Cargar botón de descarga para Android
+                contenido.innerHTML = '<a href="https://www.cencocal.cl/ventas133.apk" download><button> Descarga nuestra aplicación aquí </button></a>';
+            } else {
+                // Mensaje e imagen para otros sistemas operativos
+                contenido.innerHTML = '<img src="./img/qr.png">';
+            }
+        }
+
+    </script>
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+</head>
+
+<body onload="cargarContenido()">
+
+    <div class = "container">
+
+        <img src = "img/logo_cencocal.png">;
+    
+    </div>
+
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">CENTRAL DE COMPRAS LA CALERA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+
+
+        </nav>
+
+
+    </div>
+
+    <div class ="container">
+        <div id="contenido">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+
